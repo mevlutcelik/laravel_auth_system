@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PanelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/main', [PanelController::class, 'index']);
+Route::post('/main/checklogin', [PanelController::class, 'checklogin']);
+Route::get('main/successlogin', [PanelController::class, 'successlogin']);
+Route::get('main/logout', [PanelController::class, 'logout']);
